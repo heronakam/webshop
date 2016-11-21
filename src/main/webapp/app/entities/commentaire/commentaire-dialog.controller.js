@@ -1,0 +1,48 @@
+(function() {
+    'use strict';
+
+    angular
+        .module('shopApp')
+        .controller('CommentaireDialogController', CommentaireDialogController);
+
+    CommentaireDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Commentaire', 'User', 'Produit'];
+
+    function CommentaireDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Commentaire, User, Produit) {
+        var vm = this;
+
+        vm.commentaire = entity;
+        vm.clear = clear;
+        vm.save = save;
+        vm.users = User.query();
+        vm.produits = Produit.query();
+
+        $timeout(function (){
+            angular.element('.form-group:eq(1)>input').focus();
+        });
+
+        function clear () {
+            $uibModalInstance.dismiss('cancel');
+        }
+
+        function save () {
+            vm.isSaving = true;
+            if (vm.commentaire.id !== null) {
+                Commentaire.update(vm.commentaire, onSaveSuccess, onSaveError);
+            } else {
+                Commentaire.save(vm.commentaire, onSaveSuccess, onSaveError);
+            }
+        }
+
+        function onSaveSuccess (result) {
+            $scope.$emit('shopApp:commentaireUpdate', result);
+            $uibModalInstance.close(result);
+            vm.isSaving = false;
+        }
+
+        function onSaveError () {
+            vm.isSaving = false;
+        }
+
+
+    }
+})();

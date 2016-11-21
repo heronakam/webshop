@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "produit",
+            "otherEntityName": "produit",
+            "relationshipType": "many-to-many",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "panier"
+        },
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "panier"
+        }
+    ],
+    "fields": [],
+    "changelogDate": "20161120232318",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "panier",
+    "pagination": "infinite-scroll"
+}

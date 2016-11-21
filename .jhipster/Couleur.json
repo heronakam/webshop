@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "produit",
+            "otherEntityName": "produit",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "couleur"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "codeHexadecimal",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161119231022",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "couleur",
+    "pagination": "infinite-scroll"
+}

@@ -1,0 +1,24 @@
+{
+    "shopApp": {
+        "couleur" : {
+            "home": {
+                "title": "Couleurs",
+                "createLabel": "Create a new Couleur",
+                "createOrEditLabel": "Create or edit a Couleur",
+                "search": "Search for Couleur"
+            },
+            "created": "A new Couleur is created with identifier {{ param }}",
+            "updated": "A Couleur is updated with identifier {{ param }}",
+            "deleted": "A Couleur is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Couleur {{ id }}?"
+            },
+            "detail": {
+                "title": "Couleur"
+            },
+            "name": "Name",
+            "codeHexadecimal": "Code Hexadecimal",
+            "produit": "Produit"
+        }
+    }
+}

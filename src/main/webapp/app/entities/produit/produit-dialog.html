@@ -1,0 +1,138 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProduitLabel" data-translate="shopApp.produit.home.createOrEditLabel">Create or edit a Produit</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.produit.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.produit.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="shopApp.produit.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.produit.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="shopApp.produit.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.produit.description"
+                    required />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="shopApp.produit.imageUrl" for="field_imageUrl">Image Url</label>
+            <input type="text" class="form-control" name="imageUrl" id="field_imageUrl"
+                    ng-model="vm.produit.imageUrl"
+                    required />
+            <div ng-show="editForm.imageUrl.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.imageUrl.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="shopApp.produit.prixUnitaire" for="field_prixUnitaire">Prix Unitaire</label>
+            <input type="number" class="form-control" name="prixUnitaire" id="field_prixUnitaire"
+                    ng-model="vm.produit.prixUnitaire"
+                    required />
+            <div ng-show="editForm.prixUnitaire.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.prixUnitaire.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.prixUnitaire.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="shopApp.produit.solde" for="field_solde">Solde</label>
+            <input type="number" class="form-control" name="solde" id="field_solde"
+                    ng-model="vm.produit.solde"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="shopApp.produit.qteEnStock" for="field_qteEnStock">Qte En Stock</label>
+            <input type="number" class="form-control" name="qteEnStock" id="field_qteEnStock"
+                    ng-model="vm.produit.qteEnStock"
+                    required />
+            <div ng-show="editForm.qteEnStock.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.qteEnStock.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.qteEnStock.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="shopApp.produit.categorie" for="field_categorie">Categorie</label>
+            <select class="form-control" id="field_categorie" name="categorie" ng-model="vm.produit.categorie" ng-options="categorie as categorie.name for categorie in vm.categories track by categorie.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.categorie.$invalid">
+            <p class="help-block"
+                ng-show="editForm.categorie.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="shopApp.produit.caracteristique" for="field_caracteristique">Caracteristique</label>
+            <select class="form-control" id="field_caracteristique" multiple name="caracteristique" ng-model="vm.produit.caracteristiques" ng-options="caracteristique as caracteristique.name for caracteristique in vm.caracteristiques track by caracteristique.id" required></select>
+        </div>
+        <div ng-show="editForm.caracteristique.$invalid">
+            <p class="help-block"
+                ng-show="editForm.caracteristique.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="shopApp.produit.marque" for="field_marque">Marque</label>
+            <select class="form-control" id="field_marque" name="marque" ng-model="vm.produit.marque" ng-options="marque as marque.name for marque in vm.marques track by marque.id" required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.marque.$invalid">
+            <p class="help-block"
+                ng-show="editForm.marque.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="shopApp.produit.couleur" for="field_couleur">Couleur</label>
+            <select class="form-control" id="field_couleur" multiple name="couleur" ng-model="vm.produit.couleurs" ng-options="couleur as couleur.name for couleur in vm.couleurs track by couleur.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

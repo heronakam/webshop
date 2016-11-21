@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "produit",
+            "otherEntityName": "produit",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "categorie"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "10"
+        },
+        {
+            "fieldName": "iconUrl",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161119230051",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "categorie",
+    "pagination": "infinite-scroll"
+}

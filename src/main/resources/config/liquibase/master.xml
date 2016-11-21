@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161119230051_added_entity_Categorie.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161119230314_added_entity_Caracteristique.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161119230456_added_entity_Marque.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161119230650_added_entity_Commentaire.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161119231022_added_entity_Couleur.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161119231422_added_entity_Produit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161120232318_added_entity_Panier.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20161119230650_added_entity_constraints_Commentaire.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161119231422_added_entity_constraints_Produit.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161120232318_added_entity_constraints_Panier.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

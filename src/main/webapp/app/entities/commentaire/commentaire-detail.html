@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="shopApp.commentaire.detail.title">Commentaire</span> {{vm.commentaire.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="shopApp.commentaire.note">Note</span></dt>
+        <dd>
+            <span>{{vm.commentaire.note}}</span>
+        </dd>
+        <dt><span data-translate="shopApp.commentaire.avis">Avis</span></dt>
+        <dd>
+            <span>{{vm.commentaire.avis}}</span>
+        </dd>
+        <dt><span data-translate="shopApp.commentaire.user">User</span></dt>
+        <dd>
+            {{vm.commentaire.user.login}}
+        </dd>
+        <dt><span data-translate="shopApp.commentaire.produit">Produit</span></dt>
+        <dd>
+            <a ui-sref="produit-detail({id:vm.commentaire.produit.id})">{{vm.commentaire.produit.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="commentaire-detail.edit({id:vm.commentaire.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

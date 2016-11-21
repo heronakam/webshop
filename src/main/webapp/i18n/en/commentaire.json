@@ -1,0 +1,25 @@
+{
+    "shopApp": {
+        "commentaire" : {
+            "home": {
+                "title": "Commentaires",
+                "createLabel": "Create a new Commentaire",
+                "createOrEditLabel": "Create or edit a Commentaire",
+                "search": "Search for Commentaire"
+            },
+            "created": "A new Commentaire is created with identifier {{ param }}",
+            "updated": "A Commentaire is updated with identifier {{ param }}",
+            "deleted": "A Commentaire is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Commentaire {{ id }}?"
+            },
+            "detail": {
+                "title": "Commentaire"
+            },
+            "note": "Note",
+            "avis": "Avis",
+            "user": "User",
+            "produit": "Produit"
+        }
+    }
+}

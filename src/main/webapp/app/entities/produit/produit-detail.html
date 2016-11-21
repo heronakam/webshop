@@ -1,0 +1,120 @@
+
+<div>
+    <h3><!--<span data-translate="shopApp.produit.detail.title">   </span>--> {{vm.produit.categorie.name}}  <h3> {{vm.produit.marque.name}} {{vm.produit.name}} </h3>   </h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+<!--    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="shopApp.produit.name">Name</span></dt>
+        <dd>
+            <span>{{vm.produit.name}}</span>
+        </dd>
+        <dt><span data-translate="shopApp.produit.description">Description</span></dt>
+        <dd>
+            <span>{{vm.produit.description}}</span>
+        </dd>
+        <dt><span data-translate="shopApp.produit.imageUrl">Image Url</span></dt>
+        <dd>
+            <span>{{vm.produit.imageUrl}}</span>
+        </dd>
+        <dt><span data-translate="shopApp.produit.prixUnitaire">Prix Unitaire</span></dt>
+        <dd>
+            <span>{{vm.produit.prixUnitaire}}</span>
+        </dd>
+        <dt><span data-translate="shopApp.produit.solde">Solde</span></dt>
+        <dd>
+            <span>{{vm.produit.solde}}</span>
+        </dd>
+        <dt><span data-translate="shopApp.produit.qteEnStock">Qte En Stock</span></dt>
+        <dd>
+            <span>{{vm.produit.qteEnStock}}</span>
+        </dd>
+        <dt><span data-translate="shopApp.produit.categorie">Categorie</span></dt>
+        <dd>
+            <a ui-sref="categorie-detail({id:vm.produit.categorie.id})">{{vm.produit.categorie.name}}</a>
+        </dd>
+        <dt><span data-translate="shopApp.produit.caracteristique">Caracteristique</span></dt>
+        <dd>
+            <span ng-repeat="caracteristique in vm.produit.caracteristiques">
+                <a ui-sref="caracteristique-detail({id: caracteristique.id})">{{caracteristique.name}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="shopApp.produit.marque">Marque</span></dt>
+        <dd>
+            <a ui-sref="marque-detail({id:vm.produit.marque.id})">{{vm.produit.marque.name}}</a>
+        </dd>
+        <dt><span data-translate="shopApp.produit.couleur">Couleur</span></dt>
+        <dd>
+            <span ng-repeat="couleur in vm.produit.couleurs">
+                <a ui-sref="couleur-detail({id: couleur.id})">{{couleur.name}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>-->
+
+    <!--<button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="produit-detail.edit({id:vm.produit.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>-->
+
+
+    <div class="container">
+        <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" >
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" >
+                    <div class="product-pic">
+
+                        <img src="{{vm.produit.imageUrl}}" alt="shop">
+                    </div>
+
+                </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 product-desc"  >
+
+                    <p > {{vm.produit.description}}</p> <br>
+
+                         <span class="product-color" ng-repeat="couleur in vm.produit.couleurs">
+                             <div style="background-color: {{couleur.codeHexadecimal}}" > </div>
+                            <!--<a style="color: {{couleur.codeHexadecimal}}" ui-sref="couleur-detail({id: couleur.id})">{{couleur.name}}</a>{{$last ? '' : ', '}}-->
+                        </span>
+                <br>
+                <label ng-hide="vm.produit.solde == 0"> <s> {{vm.produit.prixUnitaire}} DH </s> </label>
+                <label  > {{(vm.produit.prixUnitaire - ((vm.produit.solde * vm.produit.prixUnitaire)/100) )}} DH </label>
+                <br>
+                        <button> ADD TO CARD</button>
+
+            </div>
+
+
+
+        </div>
+    </div>
+        <hr>
+        <h3>caracteristique </h3>
+
+        <div class="container">
+
+            <div class="col-xs-12 col-lg-12 col-sm-12 col-md-12  " >
+
+                <dl class="dl-horizontal jh-entity-details"  ng-repeat="caracteristique in vm.produit.caracteristiques" >
+
+
+                    <dt>
+                        <span >{{caracteristique.description}}</span>
+                    </dt>
+                    <dd>
+                        <span >
+
+                            {{caracteristique.name}}
+
+                        </span>
+                    </dd>
+
+                </dl>
+            </div>
+        </div>
+
+
+</div>

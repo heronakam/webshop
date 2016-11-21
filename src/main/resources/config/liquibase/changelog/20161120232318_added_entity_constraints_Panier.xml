@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Panier.
+    -->
+    <changeSet id="20161120232318-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="paniers_id"
+                                 baseTableName="panier_produit"
+                                 constraintName="fk_panier_produit_paniers_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="panier"/>
+        <addForeignKeyConstraint baseColumnNames="produits_id"
+                                 baseTableName="panier_produit"
+                                 constraintName="fk_panier_produit_produits_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="produit"/>
+        
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="panier"
+                                 constraintName="fk_panier_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+    </changeSet>
+</databaseChangeLog>

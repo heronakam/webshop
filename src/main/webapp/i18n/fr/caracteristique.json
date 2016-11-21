@@ -1,0 +1,24 @@
+{
+    "shopApp": {
+        "caracteristique" : {
+            "home": {
+                "title": "Caracteristiques",
+                "createLabel": "Créer un nouveau Caracteristique",
+                "createOrEditLabel": "Créer ou éditer un Caracteristique",
+                "search": "Recherche pour Caracteristique"
+            },
+            "created": "Un nouveau Caracteristique a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Caracteristique avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Caracteristique avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Caracteristique {{ id }} ?"
+            },
+            "detail": {
+                "title": "Caracteristique"
+            },
+            "name": "Name",
+            "description": "Description",
+            "produit": "Produit"
+        }
+    }
+}

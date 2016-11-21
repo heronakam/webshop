@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "produit",
+            "otherEntityName": "produit",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "marque"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "presentation",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength"
+            ],
+            "fieldValidateRulesMinlength": "10"
+        },
+        {
+            "fieldName": "logoUrl",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161119230456",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "marque",
+    "pagination": "infinite-scroll"
+}

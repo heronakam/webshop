@@ -1,0 +1,39 @@
+<div ng-cloak>
+
+    <div>
+
+        <jhi-alert></jhi-alert>
+
+        <br/>
+        <section class="product-list">
+            <div class="container">
+                <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="produit in vm.produits track by produit.id">
+                        <div class="product-v">
+
+                            <div class="product-a">
+                                <div class="product-i" ng-hide="produit.solde == 0" > - {{produit.solde}} %</div>
+                                <img src="{{produit.imageUrl}}" alt="shop">
+
+                                <div class="product-s-a">
+
+                                    <a ui-sref="produit-detail({id:produit.id})"> <i class="fa fa-shopping-cart"></i></a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="product-v-detail">
+                                <p> {{produit.description}}</p>
+                                <label ng-hide="produit.solde == 0"> <s> {{produit.prixUnitaire}} DH </s> </label>
+                                <label  > {{(produit.prixUnitaire - ((produit.solde * produit.prixUnitaire)/100) )}} DH </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>

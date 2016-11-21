@@ -1,0 +1,25 @@
+{
+    "shopApp": {
+        "marque" : {
+            "home": {
+                "title": "Marques",
+                "createLabel": "Create a new Marque",
+                "createOrEditLabel": "Create or edit a Marque",
+                "search": "Search for Marque"
+            },
+            "created": "A new Marque is created with identifier {{ param }}",
+            "updated": "A Marque is updated with identifier {{ param }}",
+            "deleted": "A Marque is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Marque {{ id }}?"
+            },
+            "detail": {
+                "title": "Marque"
+            },
+            "name": "Name",
+            "presentation": "Presentation",
+            "logoUrl": "Logo Url",
+            "produit": "Produit"
+        }
+    }
+}

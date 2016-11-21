@@ -1,0 +1,159 @@
+<div>
+    <h2 data-translate="shopApp.produit.home.title">Produits</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="produit.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="shopApp.produit.home.createLabel">
+                        Create new Produit
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'shopApp.produit.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <!--<div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span data-translate="shopApp.produit.name">Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span data-translate="shopApp.produit.description">Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="imageUrl"><span data-translate="shopApp.produit.imageUrl">Image Url</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="prixUnitaire"><span data-translate="shopApp.produit.prixUnitaire">Prix Unitaire</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="solde"><span data-translate="shopApp.produit.solde">Solde</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="qteEnStock"><span data-translate="shopApp.produit.qteEnStock">Qte En Stock</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="categorie.name"><span data-translate="shopApp.produit.categorie">Categorie</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="marque.name"><span data-translate="shopApp.produit.marque">Marque</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="produit in vm.produits track by produit.id">
+                    <td><a ui-sref="produit-detail({id:produit.id})">{{produit.id}}</a></td>
+                    <td>{{produit.name}}</td>
+                    <td>{{produit.description}}</td>
+                    <td>{{produit.imageUrl}}</td>
+                    <td>{{produit.prixUnitaire}}</td>
+                    <td>{{produit.solde}}</td>
+                    <td>{{produit.qteEnStock}}</td>
+                    <td>
+                        <a ui-sref="categorie-detail({id:produit.categorie.id})">{{produit.categorie.name}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="marque-detail({id:produit.marque.id})">{{produit.marque.name}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="produit-detail({id:produit.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="produit.edit({id:produit.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="produit.delete({id:produit.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>-->
+   <!-- <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+    <tr ng-repeat="produit in vm.produits track by produit.id">
+        <td><a ui-sref="produit-detail({id:produit.id})">{{produit.id}}</a></td>
+        <td>{{produit.name}}</td>
+        <td>{{produit.description}}</td>
+        <td>{{produit.imageUrl}}</td>
+        <td>{{produit.prixUnitaire}}</td>
+        <td>{{produit.solde}}</td>
+        <td>{{produit.qteEnStock}}</td>
+        <td>
+            <a ui-sref="categorie-detail({id:produit.categorie.id})">{{produit.categorie.name}}</a>
+        </td>
+        <td>
+            <a ui-sref="marque-detail({id:produit.marque.id})">{{produit.marque.name}}</a>
+        </td>
+        <td class="text-right">
+            <div class="btn-group flex-btn-group-container">
+                <button type="submit"
+                        ui-sref="produit-detail({id:produit.id})"
+                        class="btn btn-info btn-sm">
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                    <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                </button>
+                <button type="submit"
+                        ui-sref="produit.edit({id:produit.id})"
+                        class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                </button>
+                <button type="submit"
+                        ui-sref="produit.delete({id:produit.id})"
+                        class="btn btn-danger btn-sm">
+                    <span class="glyphicon glyphicon-remove-circle"></span>
+                    <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                </button>
+            </div>
+        </td>
+    </tr>
+    </tbody>-->
+    <section class="product-list">
+        <div class="container">
+            <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="produit in vm.produits track by produit.id">
+                   <div class="product-v">
+
+                       <div class="product-a">
+                           <div class="product-i" ng-hide="produit.solde == 0" > - {{produit.solde}} %</div>
+                           <img src="{{produit.imageUrl}}" alt="shop">
+
+                           <div class="product-s-a">
+
+                               <a ui-sref="produit-detail({id:produit.id})"> <i class="fa fa-shopping-cart"></i></a>
+
+                           </div>
+
+                       </div>
+
+                       <div class="product-v-detail">
+                           <p> {{produit.description}}</p>
+                            <label ng-hide="produit.solde == 0"> <s> {{produit.prixUnitaire}} DH </s> </label>
+                           <label  > {{(produit.prixUnitaire - ((produit.solde * produit.prixUnitaire)/100) )}} DH </label>
+                       </div>
+                   </div>
+               </div>
+
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,239 @@
+<div ng-cloak>
+    <!--<section class="product-list">
+
+<tr ng-repeat="categorie in vm.categories track by categorie.id">
+                    <td><a ui-sref="categorie-detail({id:categorie.id})">{{categorie.id}}</a></td>
+                    <td>{{categorie.name}}</td>
+                    <td>{{categorie.description}}</td>
+                    <td>{{categorie.iconUrl}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="categorie-detail({id:categorie.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="categorie.edit({id:categorie.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="categorie.delete({id:categorie.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+        <div class="container tags" ng-repeat="categorie in vm.categories track by categorie.id>
+
+            <div class="list-tag active-tag">
+                {{categorie.name}}
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="col-lg-4 col-xs-12 col-md-4 col-sm-6">
+                <div class="product-v">
+
+                    <div class="product-a">
+                        <div class="product-i"> -20%</div>
+                        <img src="/content/images/products/1.png" alt="shop">
+
+                        <div class="product-s-a">
+
+                            <i class="fa fa-shopping-cart"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-v-detail">
+                        <p> Floral Cotton Shirt available in green or blue amazing offer click to see</p>
+                        <label> $25.00 </label>
+                    </div>
+                </div>
+
+                <div class="product-v">
+                    <div class="product-a">
+                        <img src="http://bestengine.humanoid.fr/uploads/products/apple-iphone-7-1.png" alt="shop">
+
+                        <div class="product-s-a">
+                            &lt;!&ndash;<i class="fa fa-heart"></i>&ndash;&gt;
+                            <i class="fa fa-shopping-cart"></i>
+                            &lt;!&ndash; <i class="fa fa-share"></i>&ndash;&gt;
+                        </div>
+
+
+                    </div>
+
+                    <div class="product-v-detail">
+                        <p> Floral Cotton Shirt available in green or blue amazing offer click to see</p>
+                        <label> $25.00 </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-4 col-sm-6">
+                <div class="product-v">
+                    <div class="product-a">
+                        <img src="/content/images/products/2.png" alt="shop">
+
+                        <div class="product-s-a">
+
+                            <i class="fa fa-shopping-cart"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-v-detail">
+                        <p> Floral Cotton Shirt available in green or blue amazing offer click to see</p>
+                        <label> $25.00 </label>
+                    </div>
+                </div>
+                <div class="product-v">
+                    <div class="product-a">
+                        <img src="/content/images/products/7.png" alt="shop">
+
+                        <div class="product-s-a">
+
+                            <i class="fa fa-shopping-cart"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-v-detail">
+                        <p> Floral Cotton Shirt available in green or blue amazing offer click to see</p>
+                        <label> $25.00 </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-12 col-md-4 col-sm-6">
+                <div class="product-v">
+                    <div class="product-a">
+                        <img src="/content/images/products/3.png" alt="shop">
+
+                        <div class="product-s-a">
+
+                            <i class="fa fa-shopping-cart"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-v-detail">
+                        <p> Floral Cotton Shirt available in green or blue amazing offer click to see</p>
+                        <label> $25.00 </label>
+                    </div>
+                </div>
+
+                <div class="product-v">
+                    <div class="product-a">
+                        <img src="/content/images/products/6.png" alt="shop">
+
+                        <div class="product-s-a">
+
+                            <i class="fa fa-shopping-cart"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="product-v-detail">
+                        <p> Floral Cotton Shirt available in green or blue amazing offer click to see</p>
+                        <label> $25.00 </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+
+            </div>
+
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+
+
+        </div>
+
+        <div class="container more">
+            <button class="products-m"> load more :) Search  </button>
+        </div>
+
+    </section>-->
+    <div class="container">
+        <div class="col-lg-offset-4 col-md-4 col-lg-4 col-xs-4 col-sm-4 header-search ">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group pull-right" >
+                    <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="">
+                    <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+
+
+        <jhi-alert></jhi-alert>
+
+        <br/>
+        <section class="product-list">
+
+            <div class="container tags" >
+
+                <div class="list-tag active-tag" ng-repeat="categorie in vm.categories track by categorie.id">
+                        {{categorie.name}}
+                 </div>
+
+            </div>
+            <div class="container">
+                <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12" infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" ng-repeat="produit in vm.produits track by produit.id">
+                        <div class="product-v">
+
+                            <div class="product-a">
+                                <div class="product-i" ng-hide="produit.solde == 0" > - {{produit.solde}} %</div>
+                                <img src="{{produit.imageUrl}}" alt="shop">
+
+                                <div class="product-s-a">
+
+                                    <a ui-sref="produit-detail({id:produit.id})"> <i class="fa fa-shopping-cart"></i></a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="product-v-detail">
+                                <p> {{produit.description}}</p>
+                                <label ng-hide="produit.solde == 0"> <s> {{produit.prixUnitaire}} DH </s> </label>
+                                <label  > {{(produit.prixUnitaire - ((produit.solde * produit.prixUnitaire)/100) )}} DH </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>
